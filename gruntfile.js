@@ -13,10 +13,6 @@ module.exports = (grunt) => {
         options: {
           timeout: 1000 },
         src: 'test/unit/*.js' } },
-    concat: {
-      css: {
-        src: 'src/**/*.css',
-        dest: 'client/app/assets/css/styles.concat.css' } },
     uglify: {
       files: {
         expand: true,
@@ -62,7 +58,7 @@ module.exports = (grunt) => {
   grunt.registerTask('minify', (target) => {
     const tasks = {
       react: ['compile', 'uglify'],
-      css: ['concat:css', 'cssmin'] };
+      css: ['cssmin'] };
 
     grunt.task.run(tasks[target]);
   });
