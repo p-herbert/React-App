@@ -20,21 +20,17 @@ and stopped with the command
 	
 The application can be started in development mode with the command
 
-	npm run devStart
+	npm run dev-start
 	
-and stopped with the command
-
-	npm run devEnd
-
 ## Make
 
 Development builds can be made with the command
 
-	grunt make:dev
+	npm run make-dev
 		
 Production builds can be made with the command
 
-	grunt make:pro
+	npm run make-pro
 
 ## Avoiding Relative Paths
 
