@@ -17,6 +17,17 @@ class Life {
   }
 
   neighbors(row, col) {
+    const neighborhood = [];
+
+    for (let r = Math.max(0, row - 1); r <= Math.min(this.size() - 1, row + 1); r++) {
+      for (let c = Math.max(0, col - 1); c <= Math.min(this.size() - 1, col + 1); c++) {
+        if (!(row === r && col === c)) {
+          neighborhood.push([r, c]);
+        }
+      }
+    }
+
+    return neighborhood;
   }
 
   tick() {
