@@ -32,6 +32,11 @@ class Life {
   }
 
   each(cb) {
+    for (let row = 0; row < this.size(); row++) {
+      for (let col = 0; col < this.size(); col++) {
+        cb(row, col);
+      }
+    }
   }
 }
 
