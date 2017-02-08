@@ -1,4 +1,4 @@
-class game {
+class Life {
   constructor(n) {
     this._size = n;
     this._cells = [];
@@ -35,5 +35,5 @@ class game {
   }
 }
 
-module.exports = game;
+module.exports = Life;
 
