@@ -5,9 +5,15 @@ class game {
   }
 
   cells() {
+    return this._cells;
   }
 
   get(row, col) {
+    return this._cells[(this.size() * row) + col];
+  }
+
+  size() {
+    return this._size;
   }
 
   neighbors(row, col) {
@@ -30,3 +36,4 @@ class game {
 }
 
 module.exports = game;
+
