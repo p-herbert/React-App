@@ -77,20 +77,22 @@ class Life {
     return alive;
   }
 
-  survives(neighbors) {
+  survives(row, col, neighbors) {
     const alive = this.livingNeighbors(neighbors);
+    const cell = this.get(row, col);
 
-    if (alive === 2 || alive === 3) {
+    if (cell === 1 && (alive === 2 || alive === 3)) {
       return true;
     }
 
     return false;
   }
 
-  dies(neighbors) {
+  dies(row, col, neighbors) {
     const alive = this.livingNeighbors(neighbors);
+    const cell = this.get(row, col);
 
-    if (alive < 2 || alive > 3) {
+    if (cell === 1 && (alive < 2 || alive > 3)) {
       return true;
     }
 
@@ -99,8 +101,9 @@ class Life {
 
   born(row, col, neighbors) {
     const alive = this.livingNeighbors(neighbors);
+    const cell = this.get(row, col);
 
-    if (this.get(row, col) === 0 && alive === 3) {
+    if (cell === 0 && alive === 3) {
       return true;
     }
 
