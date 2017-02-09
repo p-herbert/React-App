@@ -16,6 +16,10 @@ class Life {
     return this._cells[this.index(row, col)];
   }
 
+  set(cells) {
+    this._cells = cells;
+  }
+
   size() {
     return this._size;
   }
@@ -56,7 +60,7 @@ class Life {
       }
     });
 
-    this._cells = next;
+    this.set(next);
   }
 
   livingNeighbors(neighbors) {
