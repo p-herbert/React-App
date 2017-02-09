@@ -39,7 +39,20 @@ class Life {
   tick() {
   }
 
-  survives(row, col) {
+  survives(neighbors) {
+    let alive = 0;
+
+    neighbors.forEach((coord) => {
+      if (this.get(coord[0], coord[1]) === 1) {
+        alive += 1;
+      }
+    });
+
+    if (alive === 2 || alive === 3) {
+      return true;
+    }
+
+    return false;
   }
 
   dies(row, col) {
