@@ -144,7 +144,5 @@ class Life {
   }
 }
 
-const life = new Life(10);
-
 module.exports = Life;
 
