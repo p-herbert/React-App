@@ -125,9 +125,7 @@ class Life {
   }
 
   init() {
-    this.each((row, col) => {
-      this.set(row, col, Math.floor(2 * Math.random()));
-    });
+    this.each((row, col) => this.set(row, col, Math.floor(2 * Math.random())));
   }
 
   print() {
