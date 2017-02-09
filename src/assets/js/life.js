@@ -37,6 +37,22 @@ class Life {
   }
 
   tick() {
+    const next = [];
+    let neighbors;
+
+    this.each((row, col) => {
+      neighbors = this.neighbors(row, col);
+
+      if (this.survives(neighbors)) {
+        next.push(1);
+      } else if (this.dies(neighbors)) {
+        next.push(0);
+      } else if (this.born(row, col, neighbors)) {
+        next.push(1);
+      }
+    });
+
+    this._cells = next;
   }
 
   livingNeighbors(neighbors) {
