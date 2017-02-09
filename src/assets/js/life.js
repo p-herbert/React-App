@@ -2,6 +2,8 @@ class Life {
   constructor(n) {
     this._size = n;
     this._cells = [];
+
+    this.init();
   }
 
   cells() {
@@ -59,9 +61,7 @@ class Life {
 
       if (this.survives(row, col, neighbors) || this.born(row, col, neighbors)) {
         next[index] = 1;
-      }
-
-      if (this.dies(row, col, neighbors)) {
+      } else {
         next[index] = 0;
       }
     });
