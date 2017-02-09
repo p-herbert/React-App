@@ -4,6 +4,20 @@ class Life {
     this._cells = [];
 
     this.init();
+//     this._cells = [
+//       0, 0, 0, 0, 0,
+//       0, 0, 0, 0, 0,
+//       0, 1, 1, 1, 0,
+//       0, 0, 0, 0, 0,
+//       0, 0, 0, 0, 0];
+
+//     this._cells = [
+//       0, 0, 0, 0, 0, 0,
+//       0, 1, 1, 0, 0, 0,
+//       0, 1, 1, 0, 0, 0,
+//       0, 0, 0, 1, 1, 0,
+//       0, 0, 0, 1, 1, 0,
+//       0, 0, 0, 0, 0, 0];
   }
 
   cells() {
@@ -129,7 +143,22 @@ class Life {
       this.set(row, col, Math.floor(2 * Math.random()));
     });
   }
+
+  print() {
+    const size = this.size();
+    let start;
+    let end;
+
+    for (let row = 0; row < size; row++) {
+      start = size * row;
+      end = (size * row) + size;
+
+      console.log(this.cells().slice(start, end).join(' '));
+    }
+  }
 }
+
+const life = new Life(10);
 
 module.exports = Life;
 
