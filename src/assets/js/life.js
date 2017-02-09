@@ -8,8 +8,12 @@ class Life {
     return this._cells;
   }
 
+  index(row, col) {
+    return (this.size() * row) + col;
+  }
+
   get(row, col) {
-    return this._cells[(this.size() * row) + col];
+    return this._cells[this.index(row, col)];
   }
 
   size() {
