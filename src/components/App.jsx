@@ -10,7 +10,7 @@ class App extends Component {
 
   render() {
     return (
-      <h1>Hello World!</h1>
+      <svg className="board" viewBox="0 0 100 100" />
     );
   }
 }
