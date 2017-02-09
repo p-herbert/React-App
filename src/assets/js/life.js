@@ -19,8 +19,14 @@ class Life {
   neighbors(row, col) {
     const neighborhood = [];
 
-    for (let r = Math.max(0, row - 1); r <= Math.min(this.size() - 1, row + 1); r++) {
-      for (let c = Math.max(0, col - 1); c <= Math.min(this.size() - 1, col + 1); c++) {
+    const minRow = Math.max(0, row - 1);
+    const maxRow = Math.min(this.size() - 1, row + 1) + 1;
+
+    const minCol = Math.max(0, col - 1);
+    const maxCol = Math.min(this.size() - 1, col + 1) + 1;
+
+    for (let r = minRow; r < maxRow; r++) {
+      for (let c = minCol; c < maxCol; c++) {
         if (!(row === r && col === c)) {
           neighborhood.push([r, c]);
         }
@@ -43,8 +49,10 @@ class Life {
   }
 
   each(cb) {
-    for (let row = 0; row < this.size(); row++) {
-      for (let col = 0; col < this.size(); col++) {
+    const size = this.size();
+
+    for (let row = 0; row < size; row++) {
+      for (let col = 0; col < size; col++) {
         cb(row, col);
       }
     }
