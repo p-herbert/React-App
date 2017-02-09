@@ -16,7 +16,7 @@ class Life {
     return this._cells[this.index(row, col)];
   }
 
-  set(cells) {
+  setCells(cells) {
     this._cells = cells;
   }
 
@@ -62,7 +62,7 @@ class Life {
       }
     });
 
-    this.set(next);
+    this.setCells(next);
   }
 
   livingNeighbors(neighbors) {
