@@ -71,7 +71,20 @@ class Life {
     return false;
   }
 
-  born(row, col) {
+  born(row, col, neighbors) {
+    let alive = 0;
+
+    neighbors.forEach((coord) => {
+      if (this.get(coord[0], coord[1]) === 1) {
+        alive += 1;
+      }
+    });
+
+    if (this.get(row, col) === 0 && alive === 3) {
+      return true;
+    }
+
+    return false;
   }
 
   each(cb) {
