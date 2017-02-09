@@ -16,6 +16,10 @@ class Life {
     return this._cells[this.index(row, col)];
   }
 
+  set(row, col, value) {
+    this._cells[this.index(row, col)] = value;
+  }
+
   setCells(cells) {
     this._cells = cells;
   }
