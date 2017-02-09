@@ -53,12 +53,12 @@ class Life {
       neighbors = this.neighbors(row, col);
       index = this.index(row, col);
 
-      if (this.survives(neighbors)) {
+      if (this.survives(row, col, neighbors) || this.born(row, col, neighbors)) {
         next[index] = 1;
-      } else if (this.dies(neighbors)) {
+      }
+
+      if (this.dies(row, col, neighbors)) {
         next[index] = 0;
-      } else if (this.born(row, col, neighbors)) {
-        next[index] = 1;
       }
     });
 
