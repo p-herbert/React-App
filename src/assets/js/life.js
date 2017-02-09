@@ -39,7 +39,7 @@ class Life {
   tick() {
   }
 
-  survives(neighbors) {
+  livingNeighbors(neighbors) {
     let alive = 0;
 
     neighbors.forEach((coord) => {
@@ -47,6 +47,12 @@ class Life {
         alive += 1;
       }
     });
+
+    return alive;
+  }
+
+  survives(neighbors) {
+    const alive = this.livingNeighbors(neighbors);
 
     if (alive === 2 || alive === 3) {
       return true;
@@ -56,13 +62,7 @@ class Life {
   }
 
   dies(neighbors) {
-    let alive = 0;
-
-    neighbors.forEach((coord) => {
-      if (this.get(coord[0], coord[1]) === 1) {
-        alive += 1;
-      }
-    });
+    const alive = this.livingNeighbors(neighbors);
 
     if (alive < 2 || alive > 3) {
       return true;
@@ -72,13 +72,7 @@ class Life {
   }
 
   born(row, col, neighbors) {
-    let alive = 0;
-
-    neighbors.forEach((coord) => {
-      if (this.get(coord[0], coord[1]) === 1) {
-        alive += 1;
-      }
-    });
+    const alive = this.livingNeighbors(neighbors);
 
     if (this.get(row, col) === 0 && alive === 3) {
       return true;
