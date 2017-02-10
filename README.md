@@ -1,38 +1,28 @@
-# React App
+# Conway's Game of Life
 
 ## Introduction
 
-This is a repository that serves as a starting point for building single page React applications.
+Conway's Game of Life built with React.
 
-## Starting
+## Installation
 
-### Production
+1. Install the required node modules.
+
+		npm install
+
+2. Transpile and browserify the React components.
+
+		npm run make-pro
+
+## Start
 
 The application can be started with the command
 
 	npm start
 
-and stopped with the command
+## Stop
+
+The application can be stopped with the command
 
 	npm stop
-
-### Development
-
-The application can be started in development mode with the command
-
-	npm run dev-start
-
-## Make
-
-Development builds can be made with the command
-
-	npm run make-dev
-
-Production builds can be made with the command
-
-	npm run make-pro
-
-## Avoiding Relative Paths
-
-The source application files have been symbolically linked to `node_modules/app` so you are able to require files by doing `require('app/assets/js/helpers.js)`.
 
