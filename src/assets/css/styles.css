@@ -16,6 +16,7 @@ rect {
   stroke-width: 1;
   background-color: cyan;
 }
+
 .dead {
   fill: gray;
 }
@@ -23,3 +24,4 @@ rect {
 .alive {
   fill: black;
 }
+
