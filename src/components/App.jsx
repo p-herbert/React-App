@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as _ from 'lodash';
+import Life from 'app/assets/js/life';
 import Cell from './Cell';
-import Life from 'App/assets/js/Life';
 
 class App extends Component {
   constructor(props) {
