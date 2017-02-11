@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as _ from 'lodash';
-import Life from 'app/assets/js/life';
+import Life from 'app-transpiled/assets/js/life';
 import Cell from './Cell';
 
 class App extends Component {
