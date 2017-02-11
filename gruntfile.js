@@ -28,12 +28,17 @@ module.exports = (grunt) => {
       options: {
         sourceMap: true,
         presets: ['es2015', 'react'] },
-      files: {
+      jsx: {
         expand: true,
         cwd: 'src/',
         src: '**/*.jsx',
         dest: 'client/app/',
-        ext: '.js' } },
+        ext: '.js' },
+      js: {
+        expand: true,
+        cwd: 'node_modules/app/',
+        src: '**/*.js',
+        dest: 'node_modules/app-transpiled/' } },
     browserify: {
       options: {
         sourceMap: true },
@@ -53,11 +58,17 @@ module.exports = (grunt) => {
         files: 'src/**/*.css',
         tasks: ['minify:css'] } } });
 
-  grunt.registerTask('compile', ['babel', 'browserify']);
+  grunt.registerTask('compile', (target) => {
+    const tasks = {
+      react: ['babel:jsx', 'browserify'],
+      all: ['babel:js', 'babel:jsx', 'browserify'] };
+
+    grunt.task.run(tasks[target]);
+  });
 
   grunt.registerTask('minify', (target) => {
     const tasks = {
-      react: ['compile', 'uglify'],
+      react: ['compile:all', 'uglify'],
       css: ['cssmin'] };
 
     grunt.task.run(tasks[target]);
@@ -65,7 +76,7 @@ module.exports = (grunt) => {
 
   grunt.registerTask('make', (target) => {
     const tasks = {
-      dev: ['env:dev', 'compile', 'minify:css'],
+      dev: ['env:dev', 'compile:react', 'minify:css'],
       pro: ['env:pro', 'minify:react', 'minify:css'] };
 
     grunt.task.run(tasks[target] || tasks.dev);
