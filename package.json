@@ -10,7 +10,7 @@
     "watch-stop": "kill -9 `ps aux | grep -w grunt | grep -v grep | awk '{print $2}'`",
     "predev-start": "npm run make-dev",
     "dev-start": "npm run watch-start & nodemon server/index.js",
-    "postinstall": "ln -s ../src node_modules/app",
+    "postinstall": "ln -s ../src node_modules/app && ln -s ../db node_modules/db",
     "start": "node server/index.js",
     "stop": "kill -9 `ps aux | grep 'node server' | grep -v grep | awk '{print $2}'`",
     "test": "grunt test"
