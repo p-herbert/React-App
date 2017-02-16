@@ -15,9 +15,7 @@ app.use(router);
 // Static assessts
 app.use(express.static('client'));
 
-app.get('/', (req, res) => {
-  res.sendFile('client/index.html');
-});
+app.get('/', (req, res) => res.sendFile('client/index.html'));
 
 module.exports = app;
 
