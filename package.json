@@ -13,6 +13,8 @@
     "drop-db": "if psql -lqt | cut -d \\| -f 1 | grep -qw greetings; then psql -c 'drop database greetings;'; fi",
     "create-db": "psql -c 'create database greetings;'",
     "make-db": "npm run drop-db && npm run create-db",
+    "db-start": "brew services start postgresql",
+    "db-stop": "brew services stop postgresql",
     "postinstall": "ln -s ../src node_modules/app && ln -s ../db node_modules/db && npm run make-db",
     "start": "node server/index.js",
     "stop": "kill -9 `ps aux | grep 'node server' | grep -v grep | awk '{print $2}'`",
