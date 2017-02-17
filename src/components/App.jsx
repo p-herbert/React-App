@@ -12,15 +12,15 @@ class App extends Component {
     this.get = this.get.bind(this);
   }
 
+  componentDidMount() {
+    this.get('/greetings', (err, data) => this.setState({ greetings: data }));
+  }
+
   get(endpoint, cb) {
     fetch(endpoint)
       .then(res => res.json())
       .then(data => cb(null, data))
       .catch(err => cb(err, null));
-  }
-
-  componentDidMount() {
-    this.get('/greetings', (err, data) => this.setState({ greetings: data }));
   }
 
   render() {
