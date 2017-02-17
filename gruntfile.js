@@ -50,10 +50,10 @@ module.exports = (grunt) => {
     watch: {
       react: {
         files: 'src/**/*.jsx',
-        tasks: ['env:dev', 'compile'] },
+        tasks: ['env:dev', 'compile:react'] },
       js: {
         files: 'src/**/*.js',
-        tasks: ['env:dev', 'compile'] },
+        tasks: ['env:dev', 'compile:react'] },
       css: {
         files: 'src/**/*.css',
         tasks: ['minify:css'] } } });
