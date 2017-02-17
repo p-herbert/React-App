@@ -25,7 +25,12 @@ class App extends Component {
 
   render() {
     return (
-      <h1>Hello World!</h1>
+      <div>
+        {
+          this.state.greetings
+            .map((lang, index) => <h1 key={index}>{ lang.greeting }</h1>)
+        }
+      </div>
     );
   }
 }
