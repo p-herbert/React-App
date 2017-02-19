@@ -15,7 +15,7 @@
     "db-make": "npm run db-drop && npm run db-create",
     "db-start": "brew services start postgresql",
     "db-stop": "brew services stop postgresql",
-    "postinstall": "ln -s ../src node_modules/app && ln -s ../db node_modules/db && npm run db-make",
+    "postinstall": "ln -s ../src node_modules/app && ln -s ../db node_modules/db ln -s ../server node_modules/server && npm run db-make",
     "start": "node server/index.js",
     "stop": "kill -9 `ps aux | grep 'node server' | grep -v grep | awk '{print $2}'`",
     "test": "grunt test"
