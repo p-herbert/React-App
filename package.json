@@ -9,7 +9,7 @@
     "watch-start": "grunt watch",
     "watch-stop": "kill -9 `ps aux | grep -w grunt | grep -v grep | awk '{print $2}'`",
     "predev-start": "npm run make-dev",
-    "dev-start": "npm run watch-start & nodemon server/index.js",
+    "dev-start": "npm run watch-start & nodemon index.js",
     "db-drop": "if psql -lqt | cut -d \\| -f 1 | grep -qw greetings; then psql -c 'drop database greetings;'; fi",
     "db-create": "psql -c 'create database greetings;'",
     "db-make": "npm run db-drop && npm run db-create",
@@ -19,7 +19,7 @@
     "link-db": "ln -s ../db node_modules/db",
     "link-server": "ln -s ../server node_modules/server",
     "postinstall": "npm run link-app && npm run link-db && npm run link-server && npm run db-make",
-    "start": "node server/index.js",
+    "start": "node index.js",
     "stop": "kill -9 `ps aux | grep 'node server' | grep -v grep | awk '{print $2}'`",
     "test": "grunt test"
   },
