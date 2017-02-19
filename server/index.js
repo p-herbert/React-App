@@ -1,4 +1,4 @@
-const app = require('./server');
+const app = require('server/server');
 const db = require('db');
 const data = require('db/data/greetings');
 const Promise = require('bluebird');
