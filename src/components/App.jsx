@@ -13,6 +13,10 @@ class App extends Component {
     this.handleChange = _.debounce(this.handleChange, 500).bind(this);
   }
 
+  componentDidMount() {
+    this.setText('I was able ere I saw elba');
+  }
+
   getText() {
     return this.state.text;
   }
@@ -23,9 +27,6 @@ class App extends Component {
 
   handleChange(event) {
     this.setText(event.target.value, () => console.log(this.getText()));
-  }
-
-  componentDidMount() {
   }
 
   render() {
