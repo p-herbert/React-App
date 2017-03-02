@@ -1,5 +1,9 @@
 const nlp = require('nlp_compromise');
 
+function normal(text) {
+  return nlp.text(text).normal();
+}
+
 function isPalindrome(str) {
   str = str.toLowerCase();
   return str === str.split('').reverse().join('');
