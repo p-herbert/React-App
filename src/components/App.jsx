@@ -10,12 +10,11 @@ class App extends Component {
   }
 
   getText() {
-    return this.state.test;
+    return this.state.text;
   }
 
-  setText(str) {
-    this.setState({
-      text: str });
+  setText(str, cb) {
+    this.setState({ text: str }, cb);
   }
 
   componentDidMount() {
