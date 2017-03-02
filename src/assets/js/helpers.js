@@ -8,6 +8,10 @@ function sentences(text) {
   return nlp.text(text).sentences;
 }
 
+function compress(str) {
+  return str.replace(/[^a-z0-9]/ig, '');
+}
+
 function isPalindrome(str) {
   str = str.toLowerCase();
   return str === str.split('').reverse().join('');
@@ -17,5 +21,10 @@ function paragraphs(text) {
   return text.replace('/\r\n/g', '\n').split('\n');
 }
 
-export { normal, sentences, isPalindrome, paragraphs };
+module.exports = {
+  normal: normal,
+  sentences: sentences,
+  compress: compress,
+  isPalindrome: isPalindrome,
+  paragraphs: paragraphs };
 
