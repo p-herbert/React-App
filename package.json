@@ -1,7 +1,7 @@
 {
-  "name": "React-App",
+  "name": "Palindrome",
   "version": "1.0.0",
-  "description": "A basic React application",
+  "description": "Highlight words that are palindromes",
   "main": "client/index.html",
   "scripts": {
     "make-dev": "grunt make:dev",
@@ -10,20 +10,14 @@
     "watch-stop": "kill -9 `ps aux | grep -w grunt | grep -v grep | awk '{print $2}'`",
     "predev-start": "npm run make-dev",
     "dev-start": "npm run watch-start & nodemon index.js",
-    "db-drop": "if psql -lqt | cut -d \\| -f 1 | grep -qw greetings; then psql -c 'drop database greetings;'; fi",
-    "db-create": "psql -c 'create database greetings;'",
-    "db-make": "npm run db-drop && npm run db-create",
-    "db-start": "brew services start postgresql",
-    "db-stop": "brew services stop postgresql",
     "link-app": "ln -s ../src node_modules/app",
-    "link-db": "ln -s ../db node_modules/db",
     "link-server": "ln -s ../server node_modules/server",
-    "postinstall": "npm run link-app && npm run link-db && npm run link-server && npm run db-make",
-    "start": "node index.js",
-    "stop": "kill -9 `ps aux | grep 'node server' | grep -v grep | awk '{print $2}'`",
+    "postinstall": "npm run link-app && npm run link-server",
+    "start": "node index.js &",
+    "stop": "kill -9 `ps aux | grep 'node index' | grep -v grep | awk '{print $2}'`",
     "test": "grunt test"
   },
-  "author": "You!",
+  "author": "Peter Herbert (p-herbert)",
   "private": true,
   "license": "UNLICENSED",
   "dependencies": {
@@ -32,11 +26,8 @@
     "express": "^4.14.1",
     "load-grunt-tasks": "^3.5.2",
     "lodash": "^4.17.2",
-    "pg": "^6.1.2",
     "react": "^15.4.1",
-    "react-dom": "^15.4.1",
-    "sequelize": "^3.30.2",
-    "whatwg-fetch": "^2.0.2"
+    "react-dom": "^15.4.1"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.18.0",
