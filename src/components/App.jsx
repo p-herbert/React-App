@@ -26,8 +26,13 @@ class App extends Component {
   }
 
   handleChange(event) {
-    this.setText(event.target.value, () => console.log(this.getText()));
+    this.setText(event.target.value);
   }
+
+  //   parse(text) {
+  //     //     h.paragraphs(text).map((paragraph) => cb(paragraph));
+  //     return text.split(' ').map((word) => h.isPalindrome(word) ? `<b>${word}</b>` : word).join('');
+  //   }
 
   render() {
     return (
@@ -40,7 +45,20 @@ class App extends Component {
         </div>
         <div id="right" className="height-full">
           <div className="markup">
-            <p>I was able ere I saw elba</p>
+            {
+              h.paragraphs(this.getText())
+                .map((p) => {
+                  return (
+                    <p>
+                      {
+                        p.split(' ')
+                          .filter(word => word !== '')
+                          .map(word => (h.isPalindrome(word) ? <b>{`${word} `}</b> : `${word} `))
+                      }
+                    </p>
+                  );
+                })
+            }
           </div>
         </div>
       </div>
