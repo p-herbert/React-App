@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const router = require('server/routers/greetRouter');
 
 // Create the Express application
 const app = express();
@@ -10,7 +9,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Add router(s)
-app.use(router);
 
 // Static assessts
 app.use(express.static('client'));
