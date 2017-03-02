@@ -5,7 +5,17 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      text: '' };
+  }
+
+  getText() {
+    return this.state.test;
+  }
+
+  setText(str) {
+    this.setState({
+      text: str });
   }
 
   componentDidMount() {
@@ -15,7 +25,10 @@ class App extends Component {
     return (
       <div>
         <div id="left" className="height-full">
-          <textarea className="editor" />
+          <textarea
+            className="editor"
+            onChange={(e) => console.log(e.target.value)}
+          />
         </div>
         <div id="right" className="height-full">
           <div className="markup">
