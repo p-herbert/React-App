@@ -7,6 +7,8 @@ class App extends Component {
 
     this.state = {
       text: '' };
+
+    this.handleChange = _.debounce(this.handleChange, 500).bind(this);
   }
 
   getText() {
@@ -15,6 +17,10 @@ class App extends Component {
 
   setText(str, cb) {
     this.setState({ text: str }, cb);
+  }
+
+  handleChange(event) {
+    this.setText(event.target.value, () => console.log(this.getText()));
   }
 
   componentDidMount() {
@@ -26,7 +32,7 @@ class App extends Component {
         <div id="left" className="height-full">
           <textarea
             className="editor"
-            onChange={(e) => console.log(e.target.value)}
+            onChange={(e) => { e.persist(); this.handleChange(e); }}
           />
         </div>
         <div id="right" className="height-full">
