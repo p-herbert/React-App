@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import * as _ from 'lodash';
 
+const h = require('app/assets/js/helpers');
+
 class App extends Component {
   constructor(props) {
     super(props);
