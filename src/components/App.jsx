@@ -13,7 +13,16 @@ class App extends Component {
 
   render() {
     return (
-      <h1>Hello World!</h1>
+      <div>
+        <div id="left" className="height-full">
+          <textarea className="editor" />
+        </div>
+        <div id="right" className="height-full">
+          <div className="markup">
+            <p>I was able ere I saw elba</p>
+          </div>
+        </div>
+      </div>
     );
   }
 }
