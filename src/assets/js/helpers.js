@@ -18,7 +18,7 @@ function isPalindrome(str) {
 }
 
 function paragraphs(text) {
-  return text.replace('/\r\n/g', '\n').split('\n');
+  return text.replace(/\r\n/g, '\n').split('\n');
 }
 
 module.exports = {
