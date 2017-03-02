@@ -29,11 +29,6 @@ class App extends Component {
     this.setText(event.target.value);
   }
 
-  //   parse(text) {
-  //     //     h.paragraphs(text).map((paragraph) => cb(paragraph));
-  //     return text.split(' ').map((word) => h.isPalindrome(word) ? `<b>${word}</b>` : word).join('');
-  //   }
-
   render() {
     return (
       <div>
