@@ -17,7 +17,5 @@ function paragraphs(text) {
   return text.replace('/\r\n/g', '\n').split('\n');
 }
 
-module.exports = {
-  isPalindrome: isPalindrome,
-  paragraphs: paragraphs };
+export { normal, sentences, isPalindrome, paragraphs };
 
