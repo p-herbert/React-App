@@ -4,6 +4,10 @@ function normal(text) {
   return nlp.text(text).normal();
 }
 
+function sentences(text) {
+  return nlp.text(text).sentences;
+}
+
 function isPalindrome(str) {
   str = str.toLowerCase();
   return str === str.split('').reverse().join('');
