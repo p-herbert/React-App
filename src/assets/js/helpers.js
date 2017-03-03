@@ -5,7 +5,7 @@ function normal(text) {
 }
 
 function sentences(text) {
-  return nlp.text(text).sentences;
+  return nlp.text(text).sentences.map(sentence => sentence.str);
 }
 
 function compress(str) {

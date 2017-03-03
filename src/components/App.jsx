@@ -47,11 +47,11 @@ class App extends Component {
                     <p key={idx}>
                       {
                         h.sentences(p).map((sentence) => {
-                          if (h.isPalindrome(h.compress(h.normal(sentence.str)))) {
-                            return <b>{ `${sentence.str} ` }</b>;
+                          if (h.isPalindrome(h.compress(h.normal(sentence)))) {
+                            return <b>{ `${sentence} ` }</b>;
                           }
 
-                          return sentence.str.split(' ')
+                          return sentence.split(' ')
                             .filter(word => word !== '')
                             .map(word => (h.isPalindrome(word.toLowerCase())
                               ? <b>{`${word} `}</b>
