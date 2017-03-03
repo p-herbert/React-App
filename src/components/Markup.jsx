@@ -1,29 +1,26 @@
 import React from 'react';
 
-const h = require('app/assets/js/helpers');
+const parse = require('app/assets/js/helpers');
 
 const Markup = ({ text }) => (
-  <div>
+  <div className="markup">
     {
-      h.paragraphs(text)
-        .map((p, idx) => {
-          return (
-            <p key={idx}>
-              {
-                h.sentences(p).map((sentence) => {
-                  if (h.isPalindrome(h.compress(h.normal(sentence)))) {
-                    return <b>{ `${sentence} ` }</b>;
-                  }
-
-                  return h.words(sentence)
-                    .map(word => (h.isPalindrome(word.toLowerCase())
-                      ? <b>{`${word} `}</b>
-                      : `${word} `));
-                })
+      parse.paragraphs(text).map((paragraph, idx) => (
+        <p key={idx}>
+          {
+            // Check if sentence forms a palindrome
+            parse.sentences(paragraph).map((sentence) => {
+              if (parse.isPalindrome(sentence)) {
+                return <b>{`${sentence}`}</b>;
               }
-            </p>
-          );
-        })
+
+              // Check if word forms a palindrome
+              return parse.words(sentence)
+                .map(word => (parse.isPalindrome(word) ? <b>{`${word} `}</b> : `${word} `));
+            })
+          }
+        </p>
+      ))
     }
   </div>
 );
@@ -32,3 +29,4 @@ Markup.propTypes = {
   text: React.PropTypes.string.isRequired };
 
 export default Markup;
+
