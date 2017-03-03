@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import * as _ from 'lodash';
-
-const h = require('app/assets/js/helpers');
+import Markup from './Markup';
 
 class App extends Component {
   constructor(props) {
@@ -39,29 +38,7 @@ class App extends Component {
           />
         </div>
         <div id="right" className="height-full">
-          <div className="markup">
-            {
-              h.paragraphs(this.getText())
-                .map((p, idx) => {
-                  return (
-                    <p key={idx}>
-                      {
-                        h.sentences(p).map((sentence) => {
-                          if (h.isPalindrome(h.compress(h.normal(sentence)))) {
-                            return <b>{ `${sentence} ` }</b>;
-                          }
-
-                          return h.words(sentence)
-                            .map(word => (h.isPalindrome(word.toLowerCase())
-                              ? <b>{`${word} `}</b>
-                              : `${word} `));
-                        })
-                      }
-                    </p>
-                  );
-                })
-            }
-          </div>
+          <Markup className="markup" text={this.state.text} />
         </div>
       </div>
     );
