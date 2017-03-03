@@ -32,13 +32,15 @@ class App extends Component {
     return (
       <div>
         <div id="left" className="height-full">
+          <h2>Editor</h2>
           <textarea
             className="editor"
             onChange={(e) => { e.persist(); this.handleChange(e); }}
           />
         </div>
         <div id="right" className="height-full">
-          <Markup className="markup" text={this.state.text} />
+          <h2>Palindromes</h2>
+          <Markup text={this.state.text} />
         </div>
       </div>
     );
