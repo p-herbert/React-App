@@ -14,7 +14,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setText('I was able ere I saw elba');
+    this.setText('Able was I ere I saw Elba');
   }
 
   getText() {
@@ -42,13 +42,21 @@ class App extends Component {
           <div className="markup">
             {
               h.paragraphs(this.getText())
-                .map((p) => {
+                .map((p, idx) => {
                   return (
-                    <p>
+                    <p key={idx}>
                       {
-                        p.split(' ')
-                          .filter(word => word !== '')
-                          .map(word => (h.isPalindrome(word) ? <b>{`${word} `}</b> : `${word} `))
+                        h.sentences(p).map((sentence) => {
+                          if (h.isPalindrome(h.compress(h.normal(sentence.str)))) {
+                            return <b>{ `${sentence.str} ` }</b>;
+                          }
+
+                          return sentence.str.split(' ')
+                            .filter(word => word !== '')
+                            .map(word => (h.isPalindrome(word.toLowerCase())
+                              ? <b>{`${word} `}</b>
+                              : `${word} `));
+                        })
                       }
                     </p>
                   );
