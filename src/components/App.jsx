@@ -51,8 +51,7 @@ class App extends Component {
                             return <b>{ `${sentence} ` }</b>;
                           }
 
-                          return sentence.split(' ')
-                            .filter(word => word !== '')
+                          return h.words(sentence)
                             .map(word => (h.isPalindrome(word.toLowerCase())
                               ? <b>{`${word} `}</b>
                               : `${word} `));

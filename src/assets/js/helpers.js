@@ -20,9 +20,14 @@ function paragraphs(text) {
   return text.replace(/\r\n/g, '\n').split('\n');
 }
 
+function words(text) {
+  return text.split(' ').filter(word => word !== '');
+}
+
 module.exports = {
   normal: normal,
   sentences: sentences,
+  words: words,
   compress: compress,
   isPalindrome: isPalindrome,
   paragraphs: paragraphs };
