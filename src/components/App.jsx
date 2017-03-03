@@ -40,7 +40,7 @@ class App extends Component {
         </div>
         <div id="right" className="height-full">
           <h2>Palindromes</h2>
-          <Markup text={this.state.text} />
+          <Markup text={this.getText()} />
         </div>
       </div>
     );
