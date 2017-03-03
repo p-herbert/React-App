@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as _ from 'lodash';
 import Markup from './Markup';
+import Editor from './Editor';
 
 class App extends Component {
   constructor(props) {
@@ -35,10 +36,7 @@ class App extends Component {
       <div>
         <div id="left" className="height-full">
           <h2>Editor</h2>
-          <textarea
-            className="editor"
-            onChange={e => this.handleChange(e)}
-          />
+          <Editor change={this.handleChange} holder={'Type here...'} />
         </div>
         <div id="right" className="height-full">
           <h2>Palindromes</h2>
