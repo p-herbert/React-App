@@ -1,22 +1,28 @@
-# React App
+# Palindrome
 
 ## Introduction
 
-This is a repository that serves as a starting point for building single page React applications.
+This React application highlights phrases or words that are palindromes.
+
+## Installation
+
+The application can be installed with the command
+
+  	npm install
 
 ## Starting
 
-### Production
+  1. Start the application with the command
 
-The application can be started with the command
+    	npm start
 
-	npm start
+  2. Open a tab in your browser and connect to `localhost:8080`
 
-and stopped with the command
+The application can be stopped with the command
 
 	npm stop
 
-### Development
+## Development Mode
 
 The application can be started in development mode with the command
 
@@ -31,8 +37,4 @@ Development builds can be made with the command
 Production builds can be made with the command
 
 	npm run make-pro
-
-## Avoiding Relative Paths
-
-The source application files have been symbolically linked to `node_modules/app` so you are able to require files by doing `require('app/assets/js/helpers.js)`.
 
