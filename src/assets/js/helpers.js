@@ -13,6 +13,7 @@ function compress(str) {
 }
 
 function isPalindrome(str) {
+  str = compress(normal(str));
   return str === str.split('').reverse().join('');
 }
 
