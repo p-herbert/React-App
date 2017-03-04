@@ -12,7 +12,7 @@
     "dev-start": "npm run watch-start & nodemon index.js",
     "link-app": "ln -s ../src node_modules/app",
     "link-server": "ln -s ../server node_modules/server",
-    "postinstall": "npm run link-app && npm run link-server",
+    "postinstall": "npm run link-app && npm run link-server && npm run make-dev",
     "start": "node index.js &",
     "stop": "kill -9 `ps aux | grep 'node index' | grep -v grep | awk '{print $2}'`",
     "test": "grunt test"
