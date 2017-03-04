@@ -3,35 +3,35 @@
 }
 
 #left {
-  float: left;
-  width: 33%;
+    float: left;
+    width: 33%;
 }
 
 #right {
-  float: left;
-  width: 66%;
+    float: left;
+    width: 66%;
 }
 
 textarea.editor {
     resize: none;
     padding: 8px;
-	  line-height: 130%;
-	  font-size: 13px;
-	  font-style: inherit;
-	  border: none;
-	  border-right: 1px solid #cccccc;
+    line-height: 130%;
+    font-size: 13px;
+    font-style: inherit;
+    border: none;
+    border-right: 1px solid #cccccc;
 }
 
 .markup, textarea.editor {
-  width: 90%;
-  height: 100%;
+    width: 90%;
+    height: 100%;
 }
 
 p {
-  word-wrap: break-word;
+    word-wrap: break-word;
 }
 
 h2 {
-  text-align: center;
-  border-bottom: 1px solid;
+    text-align: center;
+    border-bottom: 1px solid;
 }
